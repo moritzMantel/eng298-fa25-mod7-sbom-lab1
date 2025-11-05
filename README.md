@@ -90,7 +90,7 @@ All commands can be executed directly inside your GitHub Codespace using this re
 1. **Run the following command in your Codespace terminal to clone the NG911 repository:**
 
    ```bash
-   git clone https://github.com/m5stack/M5Cardputer.git
+   git clone https://github.com/tamu-edu/ng911-dev.git
    ```
 
    This will download the NG911 source code into your Codespace environment so you can generate and analyze its SBOM.
@@ -113,41 +113,40 @@ All commands can be executed directly inside your GitHub Codespace using this re
    trivy fs . --format cyclonedx --output ../deliverables/sbom_trivy_cdx.json
    ```
 
-5. **Record in your report:**
-   - How many components each tool reported (Syft vs. Trivy),
-   - One difference you notice between the SPDX SBOM and the CycloneDX SBOM (format, fields, component count, etc.), and
-   - Screenshots of your terminal output.
-
-6. **Confirm SBOM files exist:**
+5. **After both commands complete, run**
 
    ```bash
    ls ../deliverables/
    ```
+   …to confirm your SBOM files were created (sbom_syft_spdx.json and sbom_trivy_cdx.json).
+
+6. **Record in your report:**
+   - How many components each tool reported (Syft vs. Trivy),
+   - One difference you notice between the SPDX SBOM and the CycloneDX SBOM (format, fields, component count, etc.), and
+   - Screenshots of your terminal output.
 ---
 
 ## **Part 2: SBOM Vulnerability Analysis**
 
-1. **Feed the SBOM into Grype:**
+1. **Feed the Syft SBOM into Grype to discover CVEs:**
 
    ```bash
    grype sbom:../deliverables/sbom_syft_spdx.json -o table > ../deliverables/vuln_analysis_grype.txt
    ```
-
-   > ✅ If Grype reports zero vulnerabilities, that’s fine - include an explanation of why.
-
-2. **In your report, include a Top 5 Vulnerabilities table:**
+   
+2. **In your report, include a table for the top 5 vulnerabilities that includes the following:**
 
    | **CVE** | **Severity** | **Component** | **Version** | **Comment** |
    |----------|---------------|----------------|--------------|--------------|
    | CVE-2023-0286 | High | OpenSSL | 3.0.2 | TLS certificate validation bypass |
 
-3. **Preview output:**
+3. **To preview your results in the terminal before opening the full file, run:**
 
    ```bash
    head -20 ../deliverables/vuln_analysis_grype.txt
    ```
 
-4. **Select one CVE** and summarize its cause or impact using NVD.
+4. **Copy the top 5 rows into your report table. Then select one CVE, locate it in the NVD Database, and summarize its cause or impact in one sentence.
 
 ---
 
