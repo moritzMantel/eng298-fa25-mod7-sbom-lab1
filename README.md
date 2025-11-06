@@ -80,25 +80,17 @@ All commands can be executed directly inside your GitHub Codespace using this re
 
 ### Syntax Breakdown
 
-**Command:**  
-```bash
-git clone https://github.com/tamu-edu/ng911-dev.git
-```
-
 **git:**  
 This invokes the **Git** command-line tool — the version control system used to manage source code repositories.
 
-**clone:**  
-Git subcommand that creates a copy of a remote repository (like one hosted on GitHub) on your local machine or Codespace.  
-It:  
+**clone:** Git subcommand that creates a copy of a remote repository (like one hosted on GitHub) on your local machine or Codespace. It:  
 1. Downloads all files and directories from the repo.  
 2. Preserves the commit history and branches.  
 3. Automatically configures a connection (called a *remote*) to the source repository.
 
-**https://github.com/tamu-edu/ng911-dev.git:**  
-URL of the remote repository you want to clone.
+**https://github.com/tamu-edu/ng911-dev.git:** URL of the remote repository you want to clone.
 
-**Let’s break that URL down further:**
+**Let’s break that URL down further:** 
 
 | **Part** | **Meaning** |
 |-----------|-------------|
