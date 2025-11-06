@@ -226,7 +226,7 @@ sbom: → The prefix tells Grype the input is an SBOM file, not a filesystem or 
 ## **Part 3: Deliverables**
 **GitHub Submission**:
 
-1. Make sure all deliverables (e.g., SBOM & Grype output files) are committed and pushed to your forked GitHub repository. Double-check that your repository is public or that the instructor can access it.
+1. Make sure all deliverables (e.g., SBOM and Grype output files) are saved in the /deliverables folder of your Codespace, committed, and pushed to your forked GitHub repository. Double-check that your repository is public or that the instructor can access it.
 2. Submit a **2–3 page report** (PDF) including:
 
 - SBOM generation results  
