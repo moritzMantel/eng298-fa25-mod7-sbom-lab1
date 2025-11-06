@@ -224,8 +224,10 @@ sbom: → The prefix tells Grype the input is an SBOM file, not a filesystem or 
 4. Copy the top 5 rows into your report table. Then select one CVE, locate it in the NVD Database, and summarize its cause or impact in one sentence.
 
 ## **Part 3: Deliverables**
+**GitHub Submission**:
 
-1. Submit a **2–3 page report** including:
+1. Make sure all deliverables (e.g., SBOM & Grype output files) are committed and pushed to your forked GitHub repository. Double-check that your repository is public or that the instructor can access it.
+2. Submit a **2–3 page report** (PDF) including:
 
 - SBOM generation results  
 - Vulnerability analysis (top 5 CVEs or rationale for zero matches)
@@ -239,10 +241,21 @@ deliverables/
 ├── sbom_syft_spdx.json
 ├── sbom_trivy_cdx.json
 ├── vuln_analysis_grype.txt
-├── hbom_summary.md
-└── reflection.md
+├── firstname_lastname_report.pdf
 ```
-**NOTE:** Be sure to include the URL of your public forked GitHub repository in your assignment submission in Canvas.
+**Canvas Submission**:
+
+1. Copy your forked repository URL:
+   - Go to your forked repo on GitHub (it should look something like:  
+     `https://github.com/<your-username>/eng298-fa25-mod7-sbom-lab1`)
+   - Copy the URL from your browser’s address bar.
+
+2. Submit the URL in Canvas:
+   - In the Canvas assignment submission box, paste the **full URL** to your forked repo.  
+   - Example:  
+     ```[
+     https://github.com/<your-username>/eng298-fa25-mod7-sbom-lab1
+     ```
 
 ## **Grading Rubric (20 Points Total)**
 
