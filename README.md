@@ -112,50 +112,25 @@ All commands can be executed directly inside your GitHub Codespace using this re
    ```bash
    syft . -o spdx-json > ../deliverables/sbom_syft_spdx.json
    ```
-**Syntax Breakdown**:
-
-**syft** Open-source command-line tool used to generate an SBOM. Scans a project or container image to identify all the packages and dependencies present
-
-**.** The single dot (.) means “the current directory.” Syft will analyze all files and packages in the current working directory, which is ng911-dev 
-
-**-o spdx-json** Program option (*-o*) specifying the output format. Here, spdx-json tells Syft to format the results using the SPDX (Software Package Data Exchange) standard, in JSON form.
-
-**>** This is a redirection operator in the Linux shell. It takes the output that would normally print to the terminal (your screen) and redirects it to a file instead
-
-**../deliverables/sbom_syft_spdx.json** This is the destination path and filename for the SBOM output:
-
-.. → Go up one directory level from your current folder
-
-/deliverables/ → Inside that parent directory, place the file in the deliverables folder
-
-*sbom_syft_spdx.json* → Name of the generated SBOM file
-
-So the full path means: “Save the SBOM JSON file one level up, inside the deliverables directory.”
+| **Syntax Breakdown** | **Description**
+|---------------|------------------------|
+| **syft** | Open-source command line tool used to create an SBOM in an .spdx format
+| **.** | The *single dot* (*.*) means “*the current directory*.” Syft will analyze all files and packages in the current working directory, which is `ng911-dev` 
+| **-o spdx-json** | Output (*-o*) the results in an *SPDX JSON* format
+| **> ../deliverables/sbom_syft_spdx.json**| Standard shell redirection (*>*) that save the previous line's results in a file named *sbom_syft_spdx.json* in the `deliverables` folder, whichh is one directory level up from your current folder
 
 4. Generate a CycloneDX SBOM (Trivy):
 
    ```bash
    trivy fs . --format cyclonedx --output ../deliverables/sbom_trivy_cdx.json
    ```
-**Syntax Breakdown**:
-
-**trivy** Open-source command-line tool used to generate SBOMs as well as scan filesystems, containers, and repositories for vulnerabilities
-
-**fs** Program sub-command, short for **filesystem**, tells Trivy to scan the local files and directories (not a Docker image or repo)
-
-**.** The single dot (.) means “the current directory.” Trivy will inspect all the code and dependencies in your current working, which is *ng911-dev* 
-
-**--format cyclonedx** Program option (*--format*) specifying the output format. Here, *cyclonedx* tells Trivy to generate the SBOM in the CycloneDX format (an alternative to SPDX)
-
-**--output ../deliverables/sbom_trivy_cdx.json** Program option (*--output*) defines where and what to name the output file:
-
-.. → Go up one directory level from the current folder
-
-/deliverables/ → Save it inside the deliverables directory
-
-*sbom_trivy_cdx.json* → The name of the generated CycloneDX SBOM file
-
-So the file will be created as ../deliverables/sbom_trivy_cdx.json
+| **Syntax Breakdown** | **Description**
+|---------------|------------------------|
+| **trivy** | Open-source command-line tool used to generate SBOMs as well as scan filesystems, containers, and repositories for vulnerabilities
+| **fs** | Program sub-command, short for **filesystem**, telling Trivy to scan the local files and directories (not a Docker image or repo)
+| **.** | The *single dot* (*.*) means “*the current directory*.” Trivy will inspect all the code and dependencies in your current working, which is `ng911-dev` 
+| **--format cyclonedx** | Program option specifying the output *format*. Here, *cyclonedx* tells Trivy to generate the SBOM in the CycloneDX format (an alternative to SPDX)
+| **--output ../deliverables/sbom_trivy_cdx.json**| Program option (*--output*) used to define where and what to name the output file
 
 5. After both commands complete, run:
 
